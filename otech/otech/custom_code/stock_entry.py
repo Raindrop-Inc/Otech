@@ -1,4 +1,4 @@
-
+import frappe
 
 def on_save(doc, method):
     for item in doc.items:
