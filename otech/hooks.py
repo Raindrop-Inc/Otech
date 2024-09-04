@@ -213,10 +213,5 @@ doc_events = {
 # auth_hooks = [
 #	"otech.auth.validate"
 # ]
-fixtures = [
-    "Custom Field",
-    "Custom Script",
-    "Property Setter",
-    "Custom Doctype",  
-    "Client Script",
+fixtures = [{ "doctype": Custom Field",}
 ]
