@@ -213,3 +213,15 @@ doc_events = {
 # auth_hooks = [
 #	"otech.auth.validate"
 # ]
+fixtures = [     {
+        "dt": "Custom Field",
+        "filters": [
+            [
+                "module", "in", [
+                    "Otech"
+                ]
+            ]
+        ]
+
+    },
+]
