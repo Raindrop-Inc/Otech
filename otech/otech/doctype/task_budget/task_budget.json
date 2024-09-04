@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-24 22:26:49.027444",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "uom",
+  "estimated_qty",
+  "rate",
+  "amount",
+  "completed",
+  "remaining"
+ ],
+ "fields": [
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "estimated_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Estimated Qty"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "completed",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Completed"
+  },
+  {
+   "columns": 1,
+   "fieldname": "remaining",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Remaining %"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-04 20:11:54.444147",
+ "modified_by": "Administrator",
+ "module": "Otech",
+ "name": "Task Budget",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
