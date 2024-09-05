@@ -102,7 +102,7 @@ function calculate_amount_task_budget(cdt, cdn) {
     //     frappe.model.set_value(cdt, cdn, 'remaining_qty', 0);
     // }
     if (row.estimated_qty > 0) {
-        var remaining = (100 - (row.completed / row.estimated_qty) * 100);
+        var remaining = (row.completed / row.estimated_qty) * 100;
         frappe.model.set_value(cdt, cdn, 'remaining', remaining);
     } else {
         frappe.model.set_value(cdt, cdn, 'remaining_percent', 0);
