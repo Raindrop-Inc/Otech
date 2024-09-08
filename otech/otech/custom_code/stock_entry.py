@@ -19,7 +19,7 @@ def on_save(doc, method):
             current_consumed_qty = task.consumed_qty or 0
             new_consumed_qty = current_consumed_qty + item.qty
             # consumed_qty = item.qty
-            remaining_qty = task.estimated_qty - consumed_qty
+            remaining_qty = task.estimated_qty - new_consumed_qty
             remaining_percentage = 100 - ((remaining_qty / task.estimated_qty) * 100)
 
             frappe.db.set_value("Task wise Budget", task.name, "consumed_qty", new_consumed_qty)
