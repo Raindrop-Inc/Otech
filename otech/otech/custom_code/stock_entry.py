@@ -16,11 +16,13 @@ def on_save(doc, method):
     for item in doc.items:
         tasks = frappe.db.get_all("Task wise Budget", filters={"parent": item.custom_task, "item_name": item.item_code}, fields=["*"])
         for task in tasks:
-            consumed_qty = item.qty
+            current_consumed_qty = task.consumed_qty or 0
+            new_consumed_qty = current_consumed_qty + item.qty
+            # consumed_qty = item.qty
             remaining_qty = task.estimated_qty - consumed_qty
             remaining_percentage = 100 - ((remaining_qty / task.estimated_qty) * 100)
 
-            frappe.db.set_value("Task wise Budget", task.name, "consumed_qty", consumed_qty)
+            frappe.db.set_value("Task wise Budget", task.name, "consumed_qty", new_consumed_qty)
             frappe.db.set_value("Task wise Budget", task.name, "remaining_qty", remaining_qty)
             frappe.db.set_value("Task wise Budget", task.name, "remaining_", remaining_percentage)
 
