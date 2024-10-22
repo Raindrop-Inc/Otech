@@ -119,7 +119,7 @@ doctype_js = {"Task" : "public/js/task.js"}
 doc_events = {
 	"Stock Entry": {
 		# "on_update": "otech.otech.custom_code.stock_entry.on_save",
-		"after_save": "otech.otech.custom_code.stock_entry.on_save",
+		"before_save": "otech.otech.custom_code.stock_entry.on_save",
 		# "on_cancel": "method",
 		# "on_trash": "method"
 	}
