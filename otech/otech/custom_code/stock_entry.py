@@ -45,5 +45,5 @@ def on_cancel(doc, method):
                 frappe.db.set_value("Task wise Budget", task.name, "consumed_qty", new_consumed_qty)
                 frappe.db.set_value("Task wise Budget", task.name, "remaining_qty", remaining_qty)
                 frappe.db.set_value("Task wise Budget", task.name, "remaining_", remaining_percentage)
-        doc.save()
+        # doc.save()
         frappe.db.commit()
