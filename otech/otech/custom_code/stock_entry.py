@@ -1,4 +1,4 @@
-import frappe
+# import frappe
 
 # def on_save(doc, method):
 #     for item in doc.items:
@@ -13,6 +13,8 @@ import frappe
 import frappe
 
 def on_save(doc, method):
+    if doc.get("consumed_qty_updated"):
+        return 
     for item in doc.items:
         tasks = frappe.db.get_all("Task wise Budget", filters={"parent": item.custom_task, "item_name": item.item_code}, fields=["*"])
         for task in tasks:
@@ -25,5 +27,6 @@ def on_save(doc, method):
             frappe.db.set_value("Task wise Budget", task.name, "consumed_qty", new_consumed_qty)
             frappe.db.set_value("Task wise Budget", task.name, "remaining_qty", remaining_qty)
             frappe.db.set_value("Task wise Budget", task.name, "remaining_", remaining_percentage)
-
+    doc.consumed_qty_updated = True
+    doc.save()
     frappe.db.commit()
