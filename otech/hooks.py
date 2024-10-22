@@ -121,6 +121,7 @@ doc_events = {
 		# "on_update": "otech.otech.custom_code.stock_entry.on_save",
 		"on_submit": "otech.otech.custom_code.stock_entry.on_save",
 		# "on_cancel": "method",
+		"on_cancle": "otech.otech.custom_code.stock_entry.on_cancel",
 		# "on_trash": "method"
 	}
 }
